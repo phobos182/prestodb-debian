@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure)
+    # If we are doing a fresh install, then generate a uuid for the configuration
+    uuid=`uuidgen`
+    echo "node.environment=production
+node.id=$uuid
+node.data-dir=/var/lib/presto" > /etc/presto/node.properties
+    ;;
+
+  upgrade)
+    ;;
+
+  abort-upgrade)
+    ;;
+
+  *)
+    echo "preinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
