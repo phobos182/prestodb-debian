@@ -3,6 +3,13 @@ presto
 
 Custom debian builds for PrestoDB
 
+Layout
+----
+* Debian includes a simple init.d SystemV script which calls launcher. 
+* Configuration files in /etc/presto, /etc/discovery-server, etc..
+* Log files in /var/log/discovery-server. Etc..
+* Follows Tomcat style packaging. Everything is in /usr/share/presto, symlinked out to various directories
+
 Requirements
 ----
 * fpm (gem install fpm)
