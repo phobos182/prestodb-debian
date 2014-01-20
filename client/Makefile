@@ -1,9 +1,9 @@
 # Presto CLI
 SHELL := /bin/bash 
 version = 0.54
-name = presto-cli
+name = presto
 full_name = $(name)-$(version)
-download_url = "http://search.maven.org/remotecontent?filepath=com/facebook/presto/$(name)/$(version)/$(full_name)-executable.jar"
+download_url = "http://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/$(version)/$(full_name)-executable.jar"
 
 all: package
 
@@ -20,10 +20,10 @@ download: clean
 	chmod a+x $(name)
 
 build: download
-	mkdir -p build/usr/sbin
+	mkdir -p build/usr/bin
 
 bundle: build
-	cp tmp/$(name) build/usr/sbin/
+	cp tmp/$(name) build/usr/bin/
 
 package: bundle
 	cd build; \
